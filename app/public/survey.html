@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon Finder - Survey</title>
+</head>
+
+<body>
+        <!-- Main container to hold the survey components -->
+        <div class='container'>
+            <div class='card-panel red darken-1 col s12 center-align'>
+                <h4><strong>Trainer Form</strong></h4>
+                    <div class='card-panel left-align white'>
+                        <h5><strong>What did you say your name was?</strong></h5>
+                            <br>
+                                
+                                <!-- User inputs information here -->
+                                <input id="name" type="text" class="validate" required>
+                                <label class='active' for="name">Name (required)</label>
+                        
+                        <!-- Survey Questions with the optin values -->
+                        <h5><strong>Question 1</strong></h5>
+                            <p>I am that kid from Pallet Town.</p>
+                            <select data-placeholder="" class="browser-default" id="q1">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 2</strong></h5>
+                            <p>I see myself as rash and impulsive.</p>
+                            <select data-placeholder="" class="browser-default" id="q2">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 3</strong></h5>
+                            <p>I can adapt to any situtation.</p>
+                            <select data-placeholder="" class="browser-default" id="q3">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 4</strong></h5>
+                            <p>I consider myself cool and level-headed.</p>
+                            <select data-placeholder="" class="browser-default" id="q4">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 5</strong></h5>
+                            <p>I am hungry right now.</p>
+                            <select data-placeholder="" class="browser-default" id="q5">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 6</strong></h5>
+                            <p>I love ketchup.</p>
+                            <select data-placeholder="" class="browser-default" id="q6">
+                                <option value="">Choose an Option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 7</strong></h5>
+                            <p>Sooner or later, I'll pay Misty back for that whole bike incident.</p>
+                            <select data-placeholder="" class="browser-default" id="q7">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 8</strong></h5>
+                            <p>I consider myself stubborn.</p>
+                            <select data-placeholder="" class="browser-default" id="q8">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 9</strong></h5>
+                            <p>Proffessor Oak is my grandad.</p>
+                            <select data-placeholder="" class="browser-default" id="q9">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        <h5><strong>Question 10</strong></h5>
+                            <p>I see myself as a people person.</p>
+                            <select data-placeholder="" class="browser-default" id="q10">
+                                <option value="">Choose an option</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3 (I'm Somewhere in the Middle)</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                            <br>
+        
+                <!-- Submit Button -->
+                <button type ="submit" data-target="modal1" class="waves-effect waves-light btn modal-trigger black" id="submitBtn">Submit</button>
+            </div>
+        </div>
+
+    <!-- Links to API and Git Hub div -->
+    <div class="col s4">
+                <p><a href="/api/pokemon">API Pokemon List</a> | <a href="https://github.com/Dvnwllms/friend-finder" target= "_blank">GitHub Repo</a></p>
+    </div>
+
+     <!-- Materialize Modal Structure -->
+     <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Meet Your New BFF</h4>
+              <h5 id="matchName"></h5>
+              <img id="matchPic" src="" alt="No Image" width = 250px>
+            </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Done</a>
+          </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</body>
+
+</html>
