@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./public/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pokemon Finder - Survey</title>
 </head>
@@ -136,10 +137,10 @@
                 <p><a href="/api/pokemon">API Pokemon List</a> | <a href="https://github.com/Dvnwllms/friend-finder" target= "_blank">GitHub Repo</a></p>
     </div>
 
-     <!-- Materialize Modal Structure -->
+     <!-- Modal with survey results pop up -->
      <div id="modal1" class="modal">
             <div class="modal-content">
-              <h4>Meet Your New BFF</h4>
+              <h4>Check out your new Pokemon!</h4>
               <h5 id="matchName"></h5>
               <img id="matchPic" src="" alt="No Image" width = 250px>
             </div>
@@ -149,16 +150,75 @@
         </div>
 </div>
 
+<!-- Grabs information from the form and sends it to the server -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#submitBtn").on("click", function() {
+            // Function to validate the form/information //
+            function validateForm() {
+                var isValid = true;
+                $(".validate").each(function() {
+                    if ($(this).val() === ''){
+                        isValid = false;
+                    }
+                });
+                $(".browser-default").each(function() {
+                    if ($(this).val() === ""){
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
 
+        // If statement for if the form is filled out completely //
+        if (validateForm() == true) {
+            // creates a new friend from the values submitted. I can't quite get this to work out. I have been looking around but I cant find anything that fixes the issue. I tried to get fancy //
+            var newFriend = {
+                name: $("#name").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val(),
+                ]
+            };
 
+//Grabs current URL of website
+var currentURL = window.location.origin;
+            // AJAX command that posts the data to the Pokemon API //
+            $.post(currentURL + "/api/friends", newFriend, function(data) {
+                // Grabs the result from the AJAX command post so that the best match's name and photo are displayed to the user //
+                $("#matchName").text(data.name);
+                $("#matchPic").attr("src", data.profilePic);
+            });
+            // Show the modal pop up with the best match //
+                $(".modal").modal();
+            // Clears the form after submission to avoid errors/skewed results //
+            $("#name").val("");
+            $("#photo").val("");
+            $("#q1").val("");
+            $("#q2").val("");
+            $("#q3").val("");
+            $("#q4").val("");
+            $("#q5").val("");
+            $("#q6").val("");
+            $("#q7").val("");
+            $("#q8").val("");
+            $("#q9").val("");
+            $("#q10").val("");
+        } else {
+            alert("Please fill out ALL fields before submitting survey!")
+        }
+    });
+});
+</script>
 
-
-
-
-
-
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </body>
